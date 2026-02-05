@@ -1,20 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ThemeProvider, createTheme } from "@rneui/themed";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import AppStack from "./src/components/stacks/AppStack";
+
+const theme = createTheme({
+  lightColors: {
+    primary: "#93185a",
+    secondary: "#ff90c2",
+    background: "#fff",
+    white: "#fff",
+    black: "#333",
+    grey0: "#ddd",
+    grey1: "#999",
+    grey3: "#d6a0b8",
+    grey4: "#fef5f9",
+  },
+  darkColors: {
+    primary: "#93185a",
+    secondary: "#ff90c2",
+    background: "#1a1a1a",
+    white: "#fff",
+    black: "#333",
+    grey0: "#ddd",
+    grey1: "#999",
+    grey2: "#666",
+    grey3: "#d6a0b8",
+    grey4: "#fef5f9",
+  },
+  components: {
+    Button: {
+      raised: true,
+      buttonStyle: {
+        backgroundColor: "#ff90c2",
+      },
+    },
+  },
+});
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
+        <AppStack />
+        <StatusBar style="auto" />
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
