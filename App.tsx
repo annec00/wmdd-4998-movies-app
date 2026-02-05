@@ -6,7 +6,7 @@ import AppStack from "./src/components/stacks/AppStack";
 const theme = createTheme({
   lightColors: {
     primary: "#93185a",
-    secondary: "#ff90c2",
+    secondary: "#f05098",
     background: "#fff",
     white: "#fff",
     black: "#333",
@@ -17,7 +17,7 @@ const theme = createTheme({
   },
   darkColors: {
     primary: "#93185a",
-    secondary: "#ff90c2",
+    secondary: "#f05098",
     background: "#1a1a1a",
     white: "#fff",
     black: "#333",
@@ -31,7 +31,7 @@ const theme = createTheme({
     Button: {
       raised: true,
       buttonStyle: {
-        backgroundColor: "#ff90c2",
+        backgroundColor: "#f05098",
       },
     },
   },

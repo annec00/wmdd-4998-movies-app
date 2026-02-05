@@ -1,4 +1,4 @@
 export type RootStackParamList = {
-  Home: undefined;
-  "Show Movie": { id: number; mediaType: "movie" | "tv" };
+    Home: undefined;
+    "Show Movie": { id: number; mediaType: "movie" | "tv" };
 };

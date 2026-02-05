@@ -1,7 +1,7 @@
 import SearchContainer from "../components/containers/SeachContainer";
 
 const SearchScreen = () => {
-  return <SearchContainer />;
+    return <SearchContainer />;
 };
 
 export default SearchScreen;
