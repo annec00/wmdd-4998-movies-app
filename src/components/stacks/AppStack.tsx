@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 const AppStack = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{ headerBackTitle: "Back" }}>
                 <Stack.Screen
                     name="Home"
                     component={TopTabNavigator}

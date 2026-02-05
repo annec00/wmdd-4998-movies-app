@@ -15,9 +15,9 @@ As for the list of media items, only 20 items are fetched and 10 items are shown
 2. Expo - for building React Native apps easily
 3. React Navigation - for handling navigation between screens
 4. React Native Elements - for UI components such as:
-   - Cards
-   - Buttons
-   - Text
+    - Cards
+    - Buttons
+    - Text
 5. Axios - for making API requests to TMDB
 6. TypeScript - for type safety and better developer experience
 
@@ -25,34 +25,32 @@ As for the list of media items, only 20 items are fetched and 10 items are shown
 
 ### Directory Structure
 
-- src/
-  - components/
-    - containers/ - components that handle data fetching and state management
-    - listItems/ - components that represent individual items in a list
-    - screens/ - components that represent different screens in the app
-    - stacks/ - stack navigators for different sections of the app
-  - navigation/ - navigation setup and configuration
-  - services/ - API service functions for fetching data from TMDB
-  - types/ - TypeScript type definitions
-  - constants/ - constant values used throughout the app
-  - App.tsx - main entry point of the application
-
+- `src/`
+    - `components/`
+        - `containers/` - components that handle data fetching and state management
+        - `listItems/` - components that represent individual items in a list
+        - `screens/` - components that represent different screens in the app
+        - `stacks/` - stack navigators for different sections of the app
+    - `navigation/` - navigation setup and configuration
+    - `services/` - API service functions for fetching data from TMDB
+    - `types/` - TypeScript type definitions
+    - `constants/` - constant values used throughout the app
+    - `App.tsx` - main entry point of the application
 
 ### Component Hierarchy
 
-Used topdown approach for implementing components.
+Used topdown approach for implementing components such as:
 
 - Navigation (Top Tabs)
 - Screens (Movies, TV Shows, Search, Media Detail)
 - Containers (MediaListContainer, MediaDetailContainer)
 - List Items (MediaCard)
 
-
 ### Navigation
 
 - Used React Navigation's Material Top Tabs for main navigation between Movies, TV Shows, and Search screens
 - Used Stack Navigator for navigating from list screens to media detail screen
-  - Note: placed navigation related files under src/navigation instead of src/components/stacks for cleaner separation and also can easily migrate to expo router - file based approach later
+    - Note: placed navigation related files under src/navigation instead of src/components/stacks for cleaner separation and also can easily migrate to expo router - file based approach later
 
 ## Project Installation
 
@@ -76,8 +74,8 @@ Used topdown approach for implementing components.
 ## Running the app (development mode)
 
 1. Start the development server
-   `npx expo start`
+   `npm start`
 2. Follow the instructions in the terminal to run the app on an emulator or a physical device
-   - For iOS: Press 'i' to open in iOS simulator
-   - For Android: Press 'a' to open in Android emulator
-   - For physical device: Scan the QR code using the Expo Go app
+    - For iOS: Press 'i' to open in iOS simulator
+    - For Android: Press 'a' to open in Android emulator
+    - For physical device: Scan the QR code using the Expo Go app
