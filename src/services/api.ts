@@ -200,3 +200,10 @@ export async function searchMulti(query: string): Promise<Media[]> {
 // =============================
 // Common
 // =============================
+
+export function getTMDBImageUrl(width: string, posterPath: string | null): string | null {
+  if (!posterPath) {
+    return null;
+  }
+  return `https://image.tmdb.org/t/p/${width}${posterPath}`;
+}

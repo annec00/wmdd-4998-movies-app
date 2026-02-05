@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { getMediaReleaseDate, getMediaTitle, Media } from "../../types/Media";
 import { RootStackParamList } from "../../types/navigation";
-import { getMovieById, getTVShowById } from "../../services/api";
+import { getMovieById, getTVShowById, getTMDBImageUrl } from "../../services/api";
 import { useTheme } from "@rneui/themed";
 
 type MediaDetailContainerProps = {
@@ -59,12 +59,12 @@ const MediaDetailContainer = ({ id, mediaType }: MediaDetailContainerProps) => {
     );
   }
 
-  const imageUrl = `https://image.tmdb.org/t/p/w500${media.poster_path}`;
+  const imageUrl = getTMDBImageUrl("w500", media.poster_path);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>{getMediaTitle(media)}</Text>
-      <Image source={{ uri: imageUrl }} style={styles.image} />
+      <Image source={{ uri: imageUrl || undefined }} style={styles.image} />
       <Text style={styles.overview}>{media.overview}</Text>
       <View style={styles.metaContainer}>
         <Text style={styles.meta}>Popularity: {media.popularity}</Text>

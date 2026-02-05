@@ -1,6 +1,7 @@
 import { Button, Card } from "@rneui/themed";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { getMediaReleaseDate, getMediaTitle, Media } from "../../types/Media";
+import { getTMDBImageUrl } from "../../services/api";
 
 type MediaCardProps = {
   media: Media;
@@ -9,12 +10,12 @@ type MediaCardProps = {
 
 const MediaCard = (props: MediaCardProps) => {
   const { media, onPress } = props;
-  const imageUrl = `https://image.tmdb.org/t/p/w200${media.poster_path}`;
+  const imageUrl = getTMDBImageUrl("w200", media.poster_path);
   return (
     <Card containerStyle={styles.card}>
       <View style={styles.content}>
         {/* Left: Image (1/3) */}
-        <Image source={{ uri: imageUrl }} style={styles.image} />
+        <Image source={{ uri: imageUrl || undefined }} style={styles.image} />
 
         {/* Right: Details (2/3) */}
         <View style={styles.details}>
