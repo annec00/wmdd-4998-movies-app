@@ -69,7 +69,8 @@ Used topdown approach for implementing components such as:
    `npm install`
    Currently, some dependencies have peer dependency issues. Workaround is to use:
    `npm install --legacy-peer-deps` (if you encounter peer dependency issues)
-   Note: The project stores API keys in the config/apiConfig.ts for the purpose of this assignment. Application is not guaranteed to work if owner of API key revokes access.
+   
+**Note:** For the purpose of this app which is demonstrating react native concepts, the project stores API key for [TMDB](https://www.themoviedb.orghttps:/) in the `config/apiConfig.ts`. Development best practice is to create environment variable file such as `.env` and not include it in code repository. In that case, the application is not guaranteed to work if owner of API key revokes access. Sign up to [TMDB](https://www.themoviedb.orghttps:/) to generate the key and modify `config/apiConfig.ts`.
 
 ## Running the app (development mode)
 
